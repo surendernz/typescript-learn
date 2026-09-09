@@ -1,14 +1,29 @@
 {
-  "name": "typescript-learn",
+  "name": "typescript-learn2",
   "version": "1.0.0",
-  "private": true,
-  "description": "A place to learn TypeScript.",
+  "description": "",
+  "main": "index.js",
   "scripts": {
+    "dev": "tsx watch src/arrayhelpers.ts",
     "build": "tsc",
-    "check": "tsc --noEmit",
-    "dev": "tsc --watch"
+    "start": "node dist/app.js",
+    "typecheck": "tsc --noEmit"
   },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/surendernz/typescript-learn2.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/surendernz/typescript-learn2/issues"
+  },
+  "homepage": "https://github.com/surendernz/typescript-learn2#readme",
   "devDependencies": {
-    "typescript": "^5.9.2"
+    "@types/node": "^26.5.0",
+    "tsx": "^4.23.13",
+    "typescript": "^7.0.2"
   }
 }
