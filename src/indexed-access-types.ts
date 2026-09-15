@@ -14,12 +14,20 @@ type Perms =  AppUser['permissions'];
 // this can be used on arrays as well to extract the 
 // value type of elements.
 
+type Perm =  Perms[number]; // tells typescript to extract 
+//  the element type from Prems array
+
+
+
 
 const cars:string[] = ['toyota','tesla','byd'];
 
 type Car = typeof cars[number];
 //  it extracts the type of an array element
 const firstCar: Car = cars[0];
+
+
+
 
 
 
