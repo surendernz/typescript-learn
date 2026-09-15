@@ -27,6 +27,30 @@ class LinkedList<T>{
             current = current.next;
         }
     }
+    removeFirst(){
+        this.root=this.root?.next;
+    }
+    removeLast(){
+        if (!this.root) {
+            return;
+        }
+
+        if (!this.root.next) {
+            this.root = undefined;
+            this.tail = undefined;
+            this.length = 0;
+            return;
+        }
+
+        let current = this.root;
+        while (current.next?.next) {
+            current = current.next;
+        }
+
+        current.next = undefined;
+        this.tail = current;
+        this.length--;
+    }
 }
 
 
@@ -36,6 +60,12 @@ numberList.add(33);
 console.log('-->' + numberList.getNumberOfElements());
 //numberList.print();
 numberList.add(44);
+
+numberList.removeFirst();
+numberList.print();
+numberList.add(55);
 numberList.print();
 
+numberList.removeLast();
+numberList.print();
 const nameList = new LinkedList<string>();
