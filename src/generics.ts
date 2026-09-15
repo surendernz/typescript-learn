@@ -16,3 +16,11 @@ let a : DataStore<string> = {}
 a.a = 'aaa';
 a.b = 'bbb';
 
+// generic functions and interfaces
+
+function merge<T>(a:T,b:T){
+    return [a,b];
+}
+
+const ids = merge('a','b');
+
