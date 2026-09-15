@@ -23,4 +23,41 @@ function merge<T>(a:T,b:T){
 }
 
 const ids = merge('a','b');
+const ids2 = merge(1,2);
 
+function test<T, U>(a:T, b:U){
+    return [a,b];
+}
+
+const x = test(1,'s');
+
+function mergeObj <T extends object>(a:T, b:T){
+    return {...a,...b};
+}
+
+const merged = mergeObj({name:'aaa'}, {age:22});
+
+console.log(merged);
+
+function mergeObj2 <T extends object, U extends object>(a:T, b:U){
+    return {...a,...b};
+}
+
+const merged2 = mergeObj2({name:'aaa'}, {age:22});
+
+console.log(merged2);
+
+// generic classes and interfaces
+
+class User<T>{
+    constructor(public id: T){}
+
+}
+
+const user = new User('id1');
+
+user.id = 'id2';
+
+interface Role<T>{
+    name:T;
+}
